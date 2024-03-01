@@ -1,6 +1,7 @@
 package com.example.demo.configurationproperties;
 
 import com.example.demo.ui.WebUIProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix="com.example.webui")
@@ -10,6 +11,7 @@ public class WebUIPropertiesImpl implements WebUIProperties {
 
     private final AuthProperties authProperties;
 
+    @Autowired
     public WebUIPropertiesImpl(AuthProperties authProperties) {
         this.authProperties = authProperties;
     }
